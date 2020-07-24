@@ -74,7 +74,7 @@ def custom_openapi():
             path[method]["tags"] = ["Function Definitions"]
         # Modify path(s) to account for function being exposed
         # behind OpenFaas gateway
-        rel_path = f"{handler.FUNCTION_NAME}"
+        rel_path = f"/{handler.FUNCTION_NAME}"
         if key.startswith(rel_path):
             upd_paths[key] = path
         else:
